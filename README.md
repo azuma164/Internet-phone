@@ -19,6 +19,7 @@ linux, mac環境において同一のwifiに繋ぐことでインターネット
   ./phone <ポート番号>
 ```
 
+
 - IPアドレスは
 ```
   $ ifconfig
