@@ -32,14 +32,14 @@ linux, mac環境において同一のwifiに繋ぐことでインターネット
 ターミナルを2つ作り、一方をクライアント、一方をホストとして実行するとホストの声のみがクライアントに届く、一方向インターネット電話が動作します。
 ## ビルド
 ```
-  gcc -o client_recv client_recv.c
-  gcc -o serv_send serv_send.c
+  gcc -o client_recv_low client_recv_low.c -lm
+  gcc -o serv_send_low serv_send_low.c -lm
 ```
 ### クライアント
 ```
-  ./client_recv <IPアドレス> <ポート番号> | play -t raw -b 16 -c 1 -e s -r 44100 -
+  ./client_recv_low <IPアドレス> <ポート番号> 
 ```
 ### ホスト
 ```
-  rec -t raw -b 16 -c 1 -e s -r 44100 - | ./serv_send <ポート番号>
+  ./serv_send_low <ポート番号>
 ```
